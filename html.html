@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css/datatables.css"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+
+</head>
+<body>
+<div class="container">
+<table id="table1">
+    <thead >
+    <tr>
+        <th>name</th>
+        <th>age</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+</div>
+<script type="text/javascript" src="js/jquery-3.5.0.js"></script>
+
+<script type="text/javascript" src="js/datatables.js"></script>
+
+</body>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var defautl = $.fn.dataTable.defaults
+        defautl.serverSide =true
+
+        defautl.ajax = {
+            "url":"test/test2.json"
+        }
+
+        var table1 = $("#table1").DataTable(defautl)
+
+    })
+
+</script>
+</html>
